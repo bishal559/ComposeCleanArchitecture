@@ -1,3 +1,4 @@
+import com.androidx.buildsrc.JavaCompatibilityVersion
 
 
 plugins {
@@ -29,8 +30,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaCompatibilityVersion.sourceCompatibility
+        targetCompatibility = JavaCompatibilityVersion.targetCompatibility
     }
     buildFeatures {
         compose = true
@@ -39,7 +40,7 @@ android {
         kotlinCompilerExtensionVersion = libs.versions.kotlin.get()
     }
     kotlinOptions {
-        jvmTarget = libs.versions.jvmTarget.get()
+        jvmTarget = JavaCompatibilityVersion.JVM_TARGET
     }
 }
 

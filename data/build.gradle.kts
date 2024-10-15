@@ -1,3 +1,5 @@
+import com.androidx.buildsrc.JavaCompatibilityVersion
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -27,11 +29,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaCompatibilityVersion.sourceCompatibility
+        targetCompatibility = JavaCompatibilityVersion.targetCompatibility
     }
     kotlinOptions {
-        jvmTarget = libs.versions.jvmTarget.get()
+        jvmTarget = JavaCompatibilityVersion.JVM_TARGET
     }
 }
 
